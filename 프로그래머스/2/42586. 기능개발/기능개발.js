@@ -1,18 +1,18 @@
 function solution(progresses, speeds) {
-    const gigan = [];
-    
-    for( let i = 0; i < progresses.length; i++ ) {
-        gigan[i] = Math.ceil((100 - progresses[i]) / speeds[i]);
-    }
     
     
-    for( let i = 0; i < gigan.length; i++ ) {
-        if( gigan[i] >= gigan[i+1] ) {
-            gigan[i+1] = gigan[i];
+    let days = progresses.map((progress, index) => {
+       return Math.ceil((100 - progress) / speeds[index])
+    });
+  
+    
+    for( let i = 0; i < days.length; i++ ) {
+        if( days[i] >= days[i+1] ) {
+            days[i+1] = days[i];
         }
     }
     
-    const result = gigan.reduce((accu, curr) => { 
+    const result = days.reduce((accu, curr) => { 
         accu[curr] = ( accu[curr] || 0 ) + 1; 
         return accu;
     }, {});
