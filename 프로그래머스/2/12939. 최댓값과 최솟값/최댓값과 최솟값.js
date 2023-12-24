@@ -1,12 +1,37 @@
 function solution(s) {
-    var answer = '';
+
+    let answer = '';
+    const arr = s.split(" ");
     
-    let arr = s.split(" ");
+    let min = Math.min(...arr);
+    let max = Math.max(...arr);
     
-    let minNum = Math.min(...arr);
-    let maxNum = Math.max(...arr);
+    return min + ' ' + max
     
-    answer = minNum + " " + maxNum;
+    console.log(min + ' ' + max)
     
-    return answer;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//     var answer = '';
+    
+//     let arr = s.split(" ");
+    
+//     let minNum = Math.min(...arr);
+//     let maxNum = Math.max(...arr);
+    
+//     answer = minNum + " " + maxNum;
+    
+//     return answer;
 }
